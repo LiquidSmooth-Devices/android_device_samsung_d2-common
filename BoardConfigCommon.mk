@@ -29,7 +29,8 @@ TARGET_SPECIFIC_HEADER_PATH += device/samsung/d2-common/include
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
 # Kernel
-TARGET_KERNEL_CONFIG        := cyanogen_d2_defconfig
+TARGET_KERNEL_CONFIG        := bms_d2_defconfig
+TARGET_GCC_VERSION_ARM := 4.9-linaro
 
 # LIQUID OPTIMIZATIONS
 LIQUIFY := true
