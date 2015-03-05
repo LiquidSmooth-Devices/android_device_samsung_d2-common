@@ -30,7 +30,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
 # Kernel
 TARGET_KERNEL_CONFIG        := bms_d2_defconfig
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.10-linaro/bin
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.9-linaro/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 # LIQUID OPTIMIZATIONS
