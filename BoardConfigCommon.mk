@@ -29,7 +29,16 @@ TARGET_SPECIFIC_HEADER_PATH += device/samsung/d2-common/include
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
 # Kernel
-TARGET_KERNEL_CONFIG        := cyanogen_d2_defconfig
+TARGET_KERNEL_CONFIG        := deathly_d2_defconfig
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.9/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+
+# LIQUID OPTIMIZATIONS
+USE_O3 := true
+STRICT := true
+GRAPHITE := true
+LTO := true
+TARGET_ENABLE_UKM := true
 
 # Audio
 BOARD_HAVE_AUDIENCE_A2220 := true
@@ -58,6 +67,29 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 13140754432
 TARGET_RECOVERY_FSTAB := device/samsung/d2-common/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_F2FS := true
+
+# TWRP
+TARGET_RECOVERY_INITRC := device/samsung/d2-common/recovery.rc
+DEVICE_RESOLUTION := 720x1280
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+BOARD_HAS_NO_REAL_SDCARD := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_SAMSUNG := true
+TW_CRYPTO_FS_TYPE := "ext4"
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p15"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "discard,noauto_da_alloc,journal_async_commit"
+TW_CRYPTO_FS_FLAGS := "0x00000406"
+TW_CRYPTO_KEY_LOC := "footer"
+TW_BRIGHTNESS_PATH := /sys/devices/platform/msm_fb.526593/leds/lcd-backlight/brightness
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 
 # RIL
 BOARD_RIL_CLASS := ../../../device/samsung/d2-common/ril
