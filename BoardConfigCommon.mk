@@ -39,6 +39,7 @@ STRICT := true
 GRAPHITE := true
 LTO := true
 TARGET_ENABLE_UKM := true
+LIQUID_CHANGELOG := true
 
 # Audio
 BOARD_HAVE_AUDIENCE_A2220 := true
