@@ -43,7 +43,7 @@ FIRMWARE_MODEM_IMAGES += \
     modem_fw.b31 modem_fw.mdt
 
 FIRMWARE_MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_MODEM_IMAGES)))
-ifeq ($(filter d2bst d2refreshspr,$(TARGET_DEVICE)),)
+ifeq ($(filter d2bst d2usc d2refreshspr,$(TARGET_DEVICE)),)
 $(FIRMWARE_MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Modem Firmware link: $@"
 	@mkdir -p $(dir $@)
